@@ -28,7 +28,7 @@ namespace AstroChronos
         List<double> times = new(); //holds the values of planetary hours, starting from sunrise=0, incremented by duration of planetary hour each
         char[] glyphs = new char[] { '☉', '☾', '♂', '☿', '♃', '♀', '♄' };
         byte[] days = new byte[] { 0, 3, 6, 2, 5, 1, 4 }; //value of index at this array will be used as starting index for hoursChaldean array. 
-        string[] hoursChaldean = new string[] { "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon" };
+        public static string[] hoursChaldean = new string[] { "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon", "Saturn", "Jupiter", "Mars", "the Sun", "Venus", "Mercury", "the Moon" };
 
         public MainWindow() {
 
@@ -150,12 +150,12 @@ namespace AstroChronos
         private void SeeAllHours(object sender, RoutedEventArgs e)
         {
 
-            if (HoursView.checkIfOpen == 0) {
+            if (HoursView.checkIfOpen==false) {
                 HoursView hoursView = new HoursView();//no, I am not going to simplify "new()", new what?
                 hoursView.Owner = this;
                 //Debug.WriteLine(HoursView.checkIfOpen);
                 hoursView.Show();
-                HoursView.checkIfOpen = 1;
+                HoursView.checkIfOpen = true;
             }
 
         }

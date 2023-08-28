@@ -14,7 +14,7 @@ namespace AstroChronos
     /// </summary>
     public partial class HoursView : Window
     {
-        public static byte checkIfOpen; //why use numeric value instead of a boolean? idk, I felt like.
+        public static bool checkIfOpen;
         string timeFormat = MainWindow.timeFormat;
         public DateTime date = DateTime.Now;  
         byte[] days = new byte[] { 0, 3, 6, 2, 5, 1, 4 };
@@ -53,7 +53,7 @@ namespace AstroChronos
             float nightHourDuration = (float)differenceNight.TotalMinutes / 12;
             TimeSpan differenceHours = getSunset - getSunriseToday;
             float hourDuration = (float)differenceHours.TotalMinutes / 12;
-            //we need to ensure this are cleared when function is called again before populating them again
+            //to ensure these are cleared when function is called again before populating them again
             times.Clear();
             DataGridItems.Clear();
 
@@ -90,17 +90,17 @@ namespace AstroChronos
         }
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e) {
-            checkIfOpen = 0;
+            checkIfOpen = false;
             Owner.Activate();
             GC.Collect();
         }
 
         private void ClickAbout(object sender, RoutedEventArgs e) {
-            if (About.checkIfOpen == 0) {
+            if (About.checkIfOpen == false) {
                 About about_window = new About();
                 about_window.Owner= this;
                 about_window.Show();
-                About.checkIfOpen = 1;
+                About.checkIfOpen = true;
             }
         }
 
@@ -150,10 +150,10 @@ namespace AstroChronos
         }
 
         private void SettingsClick(object sender, RoutedEventArgs e) {
-            if (SettingsWindow.checkIfOpen == 0) {
+            if (SettingsWindow.checkIfOpen == false) {
                 SettingsWindow settingsWindow = new SettingsWindow();
                 settingsWindow.Owner = this;
-                SettingsWindow.checkIfOpen = 1;
+                SettingsWindow.checkIfOpen = true;
                 settingsWindow.Show();
             }
         }

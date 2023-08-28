@@ -8,13 +8,13 @@ namespace AstroChronos
     /// </summary>
     public partial class About : Window
     {
-        public static byte checkIfOpen = 0;
+        public static bool checkIfOpen;
         public About() {
             InitializeComponent();
         }
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e) {
-            checkIfOpen = 1;
+            checkIfOpen = false;
             Owner.Activate();
             GC.Collect();
         }

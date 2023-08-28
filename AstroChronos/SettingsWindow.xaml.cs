@@ -22,7 +22,7 @@ namespace AstroChronos
     /// </summary>
     public partial class SettingsWindow : Window
     {
-        public static byte checkIfOpen = 0;
+        public static bool checkIfOpen;
         List<String> timeFormat = new List<string>();
         List<string> allLocations = new List<string>();
         static XDocument value_data = XDocument.Load(System.IO.Path.Combine(Environment.GetFolderPath(
@@ -67,7 +67,7 @@ namespace AstroChronos
         }
 
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e) {
-            checkIfOpen = 0;
+            checkIfOpen = false;
             Owner.Activate();
             GC.Collect();
         }

@@ -1,0 +1,65 @@
+﻿<Window x:Class="AstroChronos.LocationSelector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AstroChronos"
+        mc:Ignorable="d"
+        Title="LocationSelector" Height="450" Width="800"
+        Closing="Window_Closing"
+        >
+
+
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="LightCyan" Offset="0.1" />
+                <GradientStop Color="AliceBlue" Offset="0.5" />
+                <GradientStop Color="LightCyan" Offset="0.9" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock Margin="0,22,0,0"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top" FontSize="32"
+                   Opacity="0.6"
+                   >
+            Welcome.
+        </TextBlock>
+        <TextBlock Margin="0,64,0,0" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Top" 
+                   FontSize="18"
+                   Opacity="0.6"
+                   >
+            Before we begin, please tell us where you are:
+        </TextBlock>
+        <ComboBox 
+            Name="locationsMenu"
+            Margin="177,155,177,228" 
+            SelectedIndex="0"
+            ItemsSource="{Binding allLocations}"
+            IsEditable="False"
+            FontSize="14"
+            Opacity="0.8"
+            >
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <Button 
+            Margin="336,214,336,173" 
+            Click="ButtonClick">
+            Confirm</Button>
+        <Image 
+            Source="background.png" 
+            Margin="-125,-82,580,-83" 
+            Panel.ZIndex="-1"
+            Opacity="0.14"/>
+        <TextBlock Margin="0,382,0,0" HorizontalAlignment="Center" FontSize="16">
+            <Hyperlink Click="HyperlinkClick">Why do I need to provide this?</Hyperlink>
+        </TextBlock>
+    </Grid>
+</Window>

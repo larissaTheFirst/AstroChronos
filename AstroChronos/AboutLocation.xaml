@@ -1,0 +1,25 @@
+﻿<Window x:Class="AstroChronos.AboutLocation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AstroChronos"
+        mc:Ignorable="d"
+        Title="Data Policy" Height="450" Width="800"
+        Closing="WindowClosing"
+        >
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="LightCyan" Offset="0.1" />
+                <GradientStop Color="AliceBlue" Offset="0.5" />
+                <GradientStop Color="LightCyan" Offset="0.9" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="30" FontSize="22" FontWeight="Bold" Opacity="0.6">Why do I need to provide the location info?</TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,95,0,0" FontSize="14" Opacity="0.6"><Run Text="  In order to calculate planetary hours, sunrise and sunset times are needed."/><LineBreak/><Run Text="To calculate sunrise and sunset times, this application needs the approximate"/><LineBreak/><Run Text="                                       coordinates of your location."/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,170,0,0" FontSize="14" Opacity="0.6"><Run Text="AstroChronos uses local database of locations and their coordinates"/><LineBreak/><Run Text=" to prevent unnecessary exposure of your information to 3rd party"/><LineBreak/><Run Text="                location APIs and other geolocation services"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,245,0,0" FontSize="14" Width="450" Opacity="0.6"><Run Text="    If you exit the location selection window before clicking on&quot;Confirm&quot;"/><LineBreak/><Run Text="           button, no location information will be saved, and setup"/><LineBreak/><Run Text="                                             will be aborted. "/></TextBlock>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,350,0,0" Height="40" Width="112" FontSize="14" Click="ButtonClick">I understand</Button>
+    </Grid>
+</Window>

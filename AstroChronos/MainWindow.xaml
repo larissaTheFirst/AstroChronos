@@ -1,0 +1,63 @@
+﻿<Window x:Class="AstroChronos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AstroChronos"
+        mc:Ignorable="d"
+        ResizeMode="CanMinimize"
+        Title="AstroChronos" 
+        Height="640" Width="510"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="SingleBorderWindow">
+
+
+
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush>
+                <GradientStop Color="LightCyan" Offset="0.1" />
+                <GradientStop Color="AliceBlue" Offset="0.5" />
+                <GradientStop Color="LightCyan" Offset="0.9" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <TextBlock Name="planetarySymbol" HorizontalAlignment="Center" Margin="0,-17,0,459" FontSize="118" FontFamily="Segoe UI Symbol" FontWeight="UltraBlack" Foreground="DeepSkyBlue" Opacity="1">0
+            <TextBlock.Effect>
+                <DropShadowEffect ShadowDepth="1" Color="White" Opacity="1" BlurRadius="60"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Name="planetaryDay" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,148,0,0" FontSize="28" FontWeight="Bold" Opacity="0.6">Loading...
+        </TextBlock>
+        <TextBlock Name="planetaryHour" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,200,0,0" FontSize="20" FontWeight="Bold" Opacity="0.6">Hour of the
+        </TextBlock>
+        <TextBlock Name="hourStarted" FontSize="16" Margin="0,226,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.6">Started:</TextBlock>
+        <TextBlock Name="nextHour" Margin="0,260,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Opacity="0.6">(Next Hour:)
+        </TextBlock>
+        <TextBlock Name="nextHourStarts" FontSize="16" Margin="0,285,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Opacity="0.6">Starts:</TextBlock>
+        <Rectangle VerticalAlignment="Top" Margin="20,317,20,0" Fill="DarkGray" Height="1"/>
+        <TextBlock Name="sunrise" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,324,0,0" Opacity="0.6"><Bold>Sunrise:</Bold>
+        </TextBlock>
+        <TextBlock Name="sunriseTime" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,349,0,0" Opacity="0.6">
+        </TextBlock>
+        <TextBlock Name="sunset" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,383,0,0" Opacity="0.6"><Bold>Sunset:</Bold>
+        </TextBlock>
+        <TextBlock Name="sunsetTime" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Margin="0,408,0,0" Opacity="0.6">
+        </TextBlock>
+
+        <Rectangle VerticalAlignment="Top" Margin="20,444,20,0" Fill="DarkGray" Height="1"/>
+        <Label Margin="0,445,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" Opacity="0.6">
+            <Bold>Moon Phase:</Bold>
+        </Label>
+        <TextBlock Name="moonPhase" Margin="0,497,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Opacity="0.6"> Moon
+        </TextBlock>
+
+        <TextBlock Name="moonSign" Margin="0,522,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" Opacity="0.6">(Sign)
+        </TextBlock>
+        <TextBlock Margin="0,567,0,0" HorizontalAlignment="Center" Opacity="0.6">
+    <Hyperlink Click="SeeAllHours" FontSize="16">See all planetary hours...</Hyperlink>
+        </TextBlock>
+    </Grid>
+
+</Window>

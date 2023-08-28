@@ -1,0 +1,50 @@
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+using System.Xaml.Schema;
+
+namespace AstroChronos
+{
+    /// <summary>
+    /// Interaction logic for LocationSelector.xaml
+    /// </summary>
+    public partial class LocationSelector : Window
+    {
+        public LocationSelector() {
+            InitializeComponent();
+            List<string> allLocations = new List<string>();
+
+            void generateLocations() {
+                using (FileStream stream = File.OpenRead("C:\\Users\\Eurydice\\source\\repos\\AstroChronos\\AstroChronos\\coord_data.csv"))
+                using (StreamReader reader = new StreamReader("C:\\Users\\Eurydice\\source\\repos\\AstroChronos\\AstroChronos\\coord_data.csv")) {
+                    while (!reader.EndOfStream) {
+                        string line = reader.ReadLine();
+                        string[] values = line.Split(';');
+
+                        allLocations.Add(string.Join("; ", values));
+                    }
+                }
+
+            }
+            
+            generateLocations();
+            locationsMenu.ItemsSource = allLocations;
+        }
+        
+       
+    }
+
+}

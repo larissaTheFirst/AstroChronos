@@ -1,0 +1,33 @@
+7/16/23
+
+I did not intend to have a development log, but here we are...
+
+I was clueless about why Mars and Venus symbol render with thick black square border around them. 
+Turns out...default Segoe UI font cannot render them properly. I needed to specify another font
+to be used - Segoe UI Symbols.
+
+Stupid and unneccessary.
+
+Also, I finally developed a formula to calculate each planetary day without hardcoding stuff. 
+I knew there was a way to do it programmatically. And I was right!
+
+Let's go!!!
+
+7/17/23
+
+You know that feeling when you want to solve a problem in certain way because you think it would be better that way?
+Even though there are other solutions that would have taken way less time...no, you continute with your stubborness 
+because you know there has to be a way to accomplish the task the way you imagined it.
+
+And once you find it out? Gods...if you ever experienced something like this, you know the feeling.
+
+If you didn't, well I hope one day you will know what I'm talking about.
+
+7/19/23
+
+The app is nearing completion. I just need to figure out threading (app needs to update hours in background) and location picking.
+
+7/29/23
+
+Been procastriniating for more than a week. WPF apps do not support transparency blur. There are ways to kinda make it work,
+but "solutions" are very hacky. Bummer.
